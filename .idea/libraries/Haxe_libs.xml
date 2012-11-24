@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Haxe libs" type="haXe">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///usr/lib/haxe/lib/actuate" />
+      <root url="file:///usr/lib/haxe/lib/hxcpp" />
+      <root url="file:///usr/lib/haxe/lib/nme" />
+      <root url="file:///usr/lib/haxe/lib/svg" />
+      <root url="file:///usr/lib/haxe/lib/swf" />
+    </SOURCES>
+  </library>
+</component>

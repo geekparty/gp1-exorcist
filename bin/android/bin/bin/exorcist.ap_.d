@@ -1,0 +1,22 @@
+F:\geekparty\bin\android\bin\bin\exorcist.ap_ \
+ : F:\geekparty\bin\android\bin\res\drawable-ldpi\icon.png \
+F:\geekparty\bin\android\bin\res\drawable-mdpi\icon.png \
+F:\geekparty\bin\android\bin\res\drawable-hdpi\icon.png \
+F:\geekparty\bin\android\bin\res\raw\assets_sounds_fire_loop_mp3.mp3 \
+F:\geekparty\bin\android\bin\res\raw\assets_sounds_growl_mp3.mp3 \
+F:\geekparty\bin\android\bin\res\raw\assets_sounds_on_playertouch_mp3.mp3 \
+F:\geekparty\bin\android\bin\res\raw\assets_sounds_scream_good_mp3.mp3 \
+F:\geekparty\bin\android\bin\res\raw\assets_sounds_theme_mp3.mp3 \
+F:\geekparty\bin\android\bin\res\drawable-xhdpi\icon.png \
+F:\geekparty\bin\android\bin\bin\res\drawable-hdpi\icon.png \
+F:\geekparty\bin\android\bin\bin\res\drawable-ldpi\icon.png \
+F:\geekparty\bin\android\bin\bin\res\drawable-mdpi\icon.png \
+F:\geekparty\bin\android\bin\bin\res\drawable-xhdpi\icon.png \
+F:\geekparty\bin\android\bin\assets\libraries_game_resources_swf \
+F:\geekparty\bin\android\bin\assets\libraries_menu_swf \
+F:\geekparty\bin\android\bin\assets\img_another_png \
+F:\geekparty\bin\android\bin\assets\img_exit_png \
+F:\geekparty\bin\android\bin\assets\img_girl_json \
+F:\geekparty\bin\android\bin\assets\img_girl_png \
+F:\geekparty\bin\android\bin\assets\img_start_png \
+F:\geekparty\bin\android\bin\bin\AndroidManifest.xml \
