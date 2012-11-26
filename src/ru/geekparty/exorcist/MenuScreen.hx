@@ -1,9 +1,10 @@
 package ru.geekparty.exorcist;
 
+import nme.media.SoundChannel;
+import nme.media.Sound;
 import nme.display.DisplayObject;
 import nme.display.MovieClip;
 import ru.geekparty.exorcist.screen.IScreen;
-//import ru.geekparty.exorcist.screen.MenuEvent;
 import ru.geekparty.exorcist.screen.ScreenEvent;
 import ru.geekparty.framework.IUpdatable;
 import ru.geekparty.framework.AnimatedSprite;
@@ -14,7 +15,7 @@ import nme.display.Bitmap;
 import nme.Lib;
 import nme.Assets;
 import ru.geekparty.framework.TextureAtlas;
-//import ru.geekparty.exorcist.MenuEvent;
+
 
 /**
  * ...
@@ -26,6 +27,9 @@ class MenuScreen extends Sprite, implements IScreen
 	private var _menuMc:MainMenuResources;
 	private var _startGameButton:DisplayObject;
 	private var _exitGameButton:DisplayObject;
+
+    private var _backMusic:Sound;
+    private var _backMusicCh:SoundChannel;
 
 	public function new()
 	{
@@ -45,12 +49,14 @@ class MenuScreen extends Sprite, implements IScreen
 		this.addChild(_menuMc);
 		_startGameButton.addEventListener(MouseEvent.CLICK, startGameHandler);
 		_exitGameButton.addEventListener(MouseEvent.CLICK, exitGameHandler);
+
+        _backMusic = Assets.getSound("assets/sounds/fire_loop.mp3");
+        _backMusicCh = _backMusic.play(0,9999);
 	}
 
 	private function exitGameHandler(event:MouseEvent):Void
 	{
 		this.close();
-		//TODO!!!! Событие выхода из игры в меню телефона!!!
 	}
 	
 	public function onEnterFrame():Void
@@ -83,5 +89,9 @@ class MenuScreen extends Sprite, implements IScreen
 			length --;
 		}
 		_startGameButton = null;
+
+        _backMusicCh.stop();
+        _backMusicCh = null;
+        _backMusic = null;
 	}
 }

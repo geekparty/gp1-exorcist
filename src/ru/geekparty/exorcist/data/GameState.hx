@@ -3,6 +3,7 @@ enum GameState {
     chill;
     exorcism;
     enrage;
+    attack;
     gameOver;
     levelComplete;
 }

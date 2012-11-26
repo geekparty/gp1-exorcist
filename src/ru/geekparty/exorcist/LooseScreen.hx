@@ -1,10 +1,13 @@
 package ru.geekparty.exorcist;
+import nme.media.SoundChannel;
+import nme.media.Sound;
 import nme.display.DisplayObject;
 import nme.display.Sprite;
 import nme.events.Event;
 import nme.events.MouseEvent;
 import nme.text.TextField;
 import nme.text.TextFormat;
+import nme.Assets;
 import ru.geekparty.exorcist.player.Player;
 import ru.geekparty.exorcist.screen.IScreen;
 import ru.geekparty.exorcist.screen.ScreenEvent;
@@ -22,7 +25,9 @@ class LooseScreen extends Sprite, implements IScreen
 	private var _scoreTxt:TextField;
 	private var _player:Player;
 	private var _textFormat:TextFormat;
-	
+    private var _backMusic:Sound;
+    private var _backMusicCh:SoundChannel;
+
 	public function new(player:Player) 
 	{
 		super();
@@ -33,14 +38,13 @@ class LooseScreen extends Sprite, implements IScreen
 	private function init(event:Event):Void
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, init);
-		
-		
+
 		_menuMc = new EndMenuResources();
 		_exitToMenuButton = cast _menuMc.getChildByName("exitToMenuButton");
 		_anotherGameButton = cast _menuMc.getChildByName("anotherGameButton");
 		_scoreTxt = cast _menuMc.getChildByName("scoreTxt");
 		
-		//_textFormat = _scoreTxt.getTextFormat();
+		_textFormat = _scoreTxt.getTextFormat();
 		
 		this.addChild(_menuMc);
 		
@@ -48,12 +52,15 @@ class LooseScreen extends Sprite, implements IScreen
 		_anotherGameButton.addEventListener(MouseEvent.CLICK, startAnotherGameHandler);
 		
 		this.setScore(_player.getScore());
+
+        _backMusic = Assets.getSound("assets/sounds/theme.mp3");
+        _backMusicCh = _backMusic.play();
 	}
 	
 	public function setScore(score:Int):Void
 	{
-		_scoreTxt.defaultTextFormat = new TextFormat( "Arial", 20, 0xFFCC33 );
 		_scoreTxt.text = Std.string(score);
+		_scoreTxt.setTextFormat(_textFormat);
 	}
 	
 	public function onEnterFrame():Void
@@ -91,5 +98,8 @@ class LooseScreen extends Sprite, implements IScreen
 		}
 		_anotherGameButton = null;
 		_exitToMenuButton = null;
+        _backMusicCh.stop();
+        _backMusicCh = null;
+        _backMusic = null;
 	}
 }

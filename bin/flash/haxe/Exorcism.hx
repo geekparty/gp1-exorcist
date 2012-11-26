@@ -20,7 +20,7 @@ class Exorcism extends MovieClip {
 		
 		var swf = SWF.instances.get ("libraries/game_resources.swf");
 		
-		switch (swf.getSymbol (17)) {
+		switch (swf.getSymbol (23)) {
 			
 			case spriteSymbol (data):
 				
